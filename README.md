@@ -1,6 +1,3 @@
-Here's a simple `README.md` file for your Wiki project:
-
-```markdown
 # Wiki Project
 
 This project is a personal wiki built using React, TypeScript, and Vite. The wiki allows users to create, edit, and delete markdown files stored in a GitHub repository. The goal is to manage personal notes, guides, and documents directly from the browser without using a CMS.
@@ -21,6 +18,7 @@ This project is a personal wiki built using React, TypeScript, and Vite. The wik
 ## Setup Instructions
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Christonn93/wiki.git
    ```
