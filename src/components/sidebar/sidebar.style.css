@@ -1,0 +1,3 @@
+.has-verticalline {
+ border-right: 1px solid var(--border-color);
+}

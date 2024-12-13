@@ -1,25 +1,38 @@
-export const BreadCrumbs = () => {
+import { useLocation, Link } from "react-router-dom";
+
+export const BreadCrumbs: React.FC = () => {
+ const location = useLocation();
+ const pathSegments = location.pathname.split("/").filter(Boolean);
+
  return (
-  <span className="icon-text">
-   <span className="icon">
-    <i className="fas fa-train"></i>
-   </span>
-   <span>Paris</span>
-   <span className="icon">
-    <i className="fas fa-arrow-right"></i>
-   </span>
-   <span>Budapest</span>
-   <span className="icon">
-    <i className="fas fa-arrow-right"></i>
-   </span>
-   <span>Bucharest</span>
-   <span className="icon">
-    <i className="fas fa-arrow-right"></i>
-   </span>
-   <span>Istanbul</span>
-   <span className="icon">
-    <i className="fas fa-flag-checkered"></i>
-   </span>
-  </span>
+  <nav className="breadcrumb" aria-label="breadcrumbs">
+   <ul>
+    <li>
+     <Link to="/">
+      <span className="icon">
+       <i className="fas fa-home"></i>
+      </span>
+      Home
+     </Link>
+    </li>
+    {pathSegments.map((segment, index) => {
+     const to = `/${pathSegments.slice(0, index + 1).join("/")}`;
+     return (
+      <li key={index}>
+       {index === pathSegments.length - 1 ? (
+        <span>{segment}</span>
+       ) : (
+        <Link to={to}>
+         <span className="icon">
+          <i className="fas fa-folder"></i>
+         </span>
+         {segment}
+        </Link>
+       )}
+      </li>
+     );
+    })}
+   </ul>
+  </nav>
  );
 };

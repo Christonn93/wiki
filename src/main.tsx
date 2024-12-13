@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "bulma/css/bulma.min.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "@/styles/theme/colors/customThemeColors.css";
 
 // Create a client instance
 const queryClient = new QueryClient();
