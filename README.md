@@ -2,6 +2,8 @@
 ![Pull Requests](https://img.shields.io/github/issues-pr/Christonn93/wiki)
 ![Deployment Status](https://img.shields.io/github/workflow/status/Christonn93/wiki/Deploy%20to%20GitHub%20Pages)
 
+[Live view](https://christonn93.github.io/wiki/)
+
 # Wiki Project
 
 This project is a personal wiki built using React, TypeScript, and Vite. The wiki allows users to create, edit, and delete markdown files stored in a GitHub repository. The goal is to manage personal notes, guides, and documents directly from the browser without using a CMS.
