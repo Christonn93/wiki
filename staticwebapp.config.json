@@ -1,0 +1,8 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "routes": [
+    { "route": "/.auth/login/aad", "statusCode": 404 }
+  ]
+}
