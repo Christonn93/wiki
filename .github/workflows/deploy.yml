@@ -10,29 +10,28 @@ jobs:
   runs-on: ubuntu-latest
 
   steps:
-   # Step 1: Checkout code
    - name: Checkout code
      uses: actions/checkout@v2
-
-   # Step 2: Set up Node.js
    - name: Set up Node.js
      uses: actions/setup-node@v2
      with:
-      node-version: "14"
-
-   # Step 3: Install dependencies
+      node-version: 20.12.2
+      cache: "npm"
+      cache-dependency-path: "package-lock.json"
    - name: Install dependencies
      run: npm install
-
-   # Step 4: Build the project
    - name: Build the project
      run: npm run build
-
-   # Step 5: Deploy to GitHub Pages
+   - name: Copy config for statick web app
+     run: cp staticwebapp.config.json dist/
+   - name: Upload dist artifact
+     uses: actions/upload-artifact@v4
+     with:
+      name: build
+      path: dist/
+      if-no-files-found: error
    - name: Deploy to GitHub Pages
      uses: peaceiris/actions-gh-pages@v3
      with:
       github_token: ${{ secrets.WIKIGIT }}
       publish_dir: ./dist
-      user_name: "github-actions"
-      user_email: "github-actions[bot]@users.noreply.github.com"
